@@ -1,0 +1,25 @@
+name: 'brazillian_ecomerce_dw'
+version: '1.0.0'
+config-version: 2
+
+# Nome do profile que você configurou no profiles.yml
+profile: 'brazillian_ecomerce_dw'
+
+# Pastas onde o dbt vai procurar arquivos
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+
+# Configurações de como as tabelas serão criadas
+models:
+  brazillian_ecomerce_dw:
+    staging:
+      schema: silver
+      materialized: view
+    intermediate:
+      schema: silver
+      materialized: view
+    marts:
+      schema: gold
+      materialized: table

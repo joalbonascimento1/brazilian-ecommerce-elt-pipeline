@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: joalbo
+      POSTGRES_PASSWORD: joalbo
+      POSTGRES_DB: dbtestes
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Opcional: Iniciar o banco com scripts SQL
+      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:
