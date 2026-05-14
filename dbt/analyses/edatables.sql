@@ -73,16 +73,3 @@ from silver.stg_orders
 select table_name from information_schema.tables
 where table_schema = 'silver'
 
-WITH sales_with_category_and_customer AS (SELECT *
-from silver.int_sales_with_category_and_customer
-),
--- select * from sales_with_category_and_customer limit 30
--- quero rankear o maior preço por estado
-rankeados as ( select 
-    customer_state,
-    product_category_name,
-    dense_rank() over(PARTITION BY product_category_name ORDER BY sum(price) desc) as rnk
-    FROM sales_with_category_and_customer
-    GROUP BY customer_state, product_category_name
-)
-select * from rankeados where rnk = 1

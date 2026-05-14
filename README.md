@@ -87,7 +87,7 @@ pip install -r requirements.txt
 Crie o arquivo `~/.dbt/profiles.yml`:
 
 ```yaml
-meu_dw:
+brazillian_ecomerce_dw:
   target: dev
   outputs:
     dev:
