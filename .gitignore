@@ -15,3 +15,5 @@ dbt/.user.yml
 # Credenciais
 .env
 profiles.yml
+*.csv
+kaggle.json

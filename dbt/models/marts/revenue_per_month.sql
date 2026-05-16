@@ -7,7 +7,7 @@ revenues_per_month AS (
     coalesce(round(sum(price::numeric), 2), 0) AS revenue
     FROM sales
     GROUP BY 1
-    ORDER BY month desc
     
 )
 select * from revenues_per_month
+ORDER BY month desc

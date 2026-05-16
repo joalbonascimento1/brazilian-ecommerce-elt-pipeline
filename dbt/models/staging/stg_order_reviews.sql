@@ -1,4 +1,4 @@
-WITH source as (
+WITH source AS (
     SELECT * FROM {{ source('olist','olist_order_reviews_dataset') }}
 ),
 renamed as (

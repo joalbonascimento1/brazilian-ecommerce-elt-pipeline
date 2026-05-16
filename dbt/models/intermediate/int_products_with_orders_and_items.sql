@@ -18,4 +18,3 @@ joined AS (
         WHERE order_status = 'delivered'
 )
 SELECT * FROM joined
--- Juntei as tabelas e filtrei somente os pedidos entregues

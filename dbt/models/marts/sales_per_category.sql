@@ -12,5 +12,3 @@ sales_per_category AS (
     ORDER BY total_revenues desc
 )
 SELECT * from sales_per_category
--- Apliquei uma contagem e uma soma das vendas totais por categoria, precisei converter o price para numeric para arredondar os valores (estavam com muitas casas decimais)
--- Filtrei os nomes de categorias não-nulos e ordenei em ordem decrescente

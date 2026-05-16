@@ -1,4 +1,4 @@
-with source as (
+WITH source AS (
 
     select * from {{ source('olist', 'olist_orders_dataset') }}
 

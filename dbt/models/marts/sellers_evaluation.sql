@@ -9,6 +9,6 @@ sellers_evaluation AS (
     round(avg(review_score::numeric),2) as avg_review_score
     FROM orders_and_sellers
     GROUP BY seller_id
-    ORDER BY seller_revenue desc
 )
 SELECT * FROM sellers_evaluation
+ORDER BY seller_revenue desc

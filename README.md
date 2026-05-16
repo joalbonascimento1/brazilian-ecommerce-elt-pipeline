@@ -2,6 +2,16 @@
 
 Pipeline de dados completo construído sobre o dataset público [Olist Brazilian E-commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) do Kaggle, implementando a arquitetura medalhão (Bronze → Silver → Gold) com Python, dbt e PostgreSQL.
 
+## Escolhas Técnicas
+Decisões tomadas durante o desenvolvimento: 
+- dbt test em tabelas staging, visando mitigar erros desde a base; 
+- Manter a camada bronze original visando possíveis cenários futuros em que a regra de negócio mude, dessa forma não perderemos a historicidade dos dados e poderemos aplicar a nova regra de negócio aos dados antigos;
+- Alternância entre views/tables nos models, optando pelo custo-benefício entre performance (nas marts) e armazenamento (nas stagings e intermediates), já que os dados mais utilizados se encontram nas marts(análises) e na bronze (machine learning)
+- Análise exploratória eficiente, visando descartar colunas desnecessárias e executar joins com qualidade
+
+Resultado observável: 8 models essenciais passando em todos os testes dbt.
+
+
 ## Arquitetura
 
 ```
@@ -130,6 +140,7 @@ Testes implementados na camada staging via `dbt test`:
 - `unique` e `not_null` em chaves primárias
 - `accepted_values` em colunas categóricas (`order_status`)
 - `relationships` para integridade referencial entre tabelas
+
 
 ## Contato
 
