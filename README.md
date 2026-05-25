@@ -152,4 +152,4 @@ Testes implementados na camada staging via `dbt test`:
 
 ## Contato
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Joalbo%20Junior-blue)](www.linkedin.com/in/joalbo-nascimento-9b01a6236/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Joalbo%20Nascimento-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joalbo-nascimento-9b01a6236/)
