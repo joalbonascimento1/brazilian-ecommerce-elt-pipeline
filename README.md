@@ -38,8 +38,8 @@ Gold (schema: gold)       ← marts: métricas prontas para análise
 - **Python** — extração via Kaggle API e carga com `pandas` + `SQLAlchemy`
 - **PostgreSQL 15** — banco de dados, executado via Docker
 - **dbt-postgres** — transformação, testes e documentação dos dados
-- **Docker** — containerização do banco de dados
-- **PowerBI** - Análise de métricas
+- **Docker**  containerização do banco de dados
+- **PowerBI** —  Análise de métricas
 
 ## Perguntas de negócio respondidas
 
@@ -152,4 +152,4 @@ Testes implementados na camada staging via `dbt test`:
 
 ## Contato
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Joalbo%20Junior-blue)](https://www.linkedin.com/in/joalbo-junior-9b01a6236/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Joalbo%20Junior-blue)](www.linkedin.com/in/joalbo-nascimento-9b01a6236/)
