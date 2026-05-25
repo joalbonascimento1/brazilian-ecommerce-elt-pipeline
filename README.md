@@ -8,6 +8,7 @@ Decisões tomadas durante o desenvolvimento:
 - Manter a camada bronze original visando possíveis cenários futuros em que a regra de negócio mude, dessa forma não perderemos a historicidade dos dados e poderemos aplicar a nova regra de negócio aos dados antigos;
 - Alternância entre views/tables nos models, optando pelo custo-benefício entre performance (nas marts) e armazenamento (nas stagings e intermediates), já que os dados mais utilizados se encontram nas marts(análises) e na bronze (machine learning)
 - Análise exploratória eficiente, visando descartar colunas desnecessárias e executar joins com qualidade
+- Métricas centralizadas na camada gold, evitando divergência de resultados entre analistas
 
 Resultado observável: 8 models essenciais passando em todos os testes dbt.
 
@@ -38,6 +39,7 @@ Gold (schema: gold)       ← marts: métricas prontas para análise
 - **PostgreSQL 15** — banco de dados, executado via Docker
 - **dbt-postgres** — transformação, testes e documentação dos dados
 - **Docker** — containerização do banco de dados
+- **PowerBI** - Análise de métricas
 
 ## Perguntas de negócio respondidas
 
@@ -54,6 +56,8 @@ Gold (schema: gold)       ← marts: métricas prontas para análise
 ```
 ├── ingestion/
 │   └── extract_load.py          # extração do Kaggle e carga no Postgres
+├── Bi/
+│   └── dashboard.pbix           # análise visual de métricas
 ├── dbt/
 │   ├── dbt_project.yml          # configuração do projeto dbt
 │   ├── models/
@@ -132,6 +136,10 @@ dbt docs serve --project-dir dbt
 ```
 
 Acesse `http://localhost:8080` para visualizar o grafo de linhagem completo.
+
+### 7. Consumir métricas dos dados
+- Abrir o arquivo .pbix em /BI
+- Analisar dados
 
 ## Testes de qualidade
 
